@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Tax Calculator</title>
+</head>
+
+<body>
+    <div id="container">
+        <h1 id="head">Welcome To Tax Calculator</h1>
+        <form>
+            <div id="input">
+                <h1 id="cal">Calculator</h1>
+                <label>Monthly Income</label><input type="text" id="salary"><br><br>
+                <label>Month</label><input type="text" id="month" max="12"> <br><br>
+                <label>Family Member</label><label class="check"><input type="checkbox" id="father"
+                        >Father</label>
+                <label class="check"><input type="checkbox" id="mother" >Mother</label>
+                <label class="check"><input type="checkbox" id="spouse">Spouse</label><br><br>
+                <label>Children</label><input type="text" id="children"><br><br>
+                <label>Other deductibles</label><input type="text" id="dedu"><br><br>
+                <input type="button" onclick="calculate()" value="Calculate">
+                <!-- <input type="reset" value="Clear">  -->
+                <!-- <a href="taxcalculator.html" style="text-decoration: none">Refresh</a> <br><br> -->
+            </div>
+        </form>
+        <div id="resulttable" style="display: none;">
+            <table id="reultTable">
+                <h1>Result For Tax </h1>
+                <tr>
+                    <th id="salary">Monthly Salary</th>
+                    <th id="amt1"></th>
+                </tr>
+                <tr>
+                    <th id="annual">Annual Salary</th>
+                    <th id="amt2"></th>
+                </tr>
+                <tr>
+                    <th id="personal">Personal Relif</th>
+                    <th id="amt3"></th>
+                </tr>
+                <tr>
+                    <th id="parent">Parent Relif</th>
+                    <th id="amt4"></th>
+                </tr>
+                <tr>
+                    <th id="spouse">Spouse Relif</th>
+                    <th id="amt5"></th>
+                </tr>
+                <tr>
+                    <th id="child">Child Relif</th>
+                    <th id="amt6"></th>
+                </tr>
+                <tr>
+                    <th id="other">Other Deductible</th>
+                    <th id="amt7"></th>
+                </tr>
+                <tr>
+                    <th id="taxable">Taxable Income</th>
+                    <th id="amt8"></th>
+                </tr>
+                <tr>
+                    <th id="totaltax">Total Tax</th>
+                    <th id="amt9"></th>
+                </tr>
+                <tr>
+                    <th id="monthtax">Monthly Tax</th>
+                    <th id="amt10"></th>
+                </tr>
+            </table><br><br>
+        </div>
+        <!-- <button id="btn1">Edit</button> -->
+        <div id="resulttable1" style="display: none;">
+            <table id="resultTable1" border= "2px solid #efd096">
+                <tr>
+                    <th colspan="4">Detail</th>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <th>Rate</th>
+                    <th>Taxable</th>
+                    <th id="mmk">Tax Amount </th>
+                </tr>
+                <tr>
+                    <th>0Lakh - 20Lakh</th>
+                    <th>0%</th>
+                    <th id="a"></th>
+                    <th id="aa">0</th>
+                </tr>
+                <tr>
+                    <th>20Lakh - 50Lakh</th>
+                    <th>5%</th>
+                    <th id="b"></th>
+                    <th id="bb"></th>
+                </tr>
+                <tr>
+                    <th>50Lakh - 100Lakh</th>
+                    <th>10%</th>
+                    <th id="c"></th>
+                    <th id="cc"></th>
+                </tr>
+                <tr>
+                    <th>100Lakh - 200Lakh</th>
+                    <th>15%</th>
+                    <th id="d"></th>
+                    <th id="dd"></th>
+                </tr>
+                <tr>
+                    <th>200Lakh - 300Lakh</th>
+                    <th>20%</th>
+                    <th id="e"></th>
+                    <th id="ee"></th>
+                </tr>
+                <tr>
+                    <th>Above 300Lakh</th>
+                    <th>25%</th>
+                    <th id="f"></th>
+                    <th id="ff"></th>
+                </tr>
+                <tr>
+                    <th colspan="3">Total Tax(MMK)</th>
+                    <th id="result"></th>
+                </tr>
+            </table>
+        </div>
+        <input type="button" id="btn1" value="Edit" style="display: none;">
+    </div>
+    <script src="taxcalculator.js"></script>
+</body>
+
+</html>
